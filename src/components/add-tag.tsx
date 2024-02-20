@@ -1,4 +1,5 @@
 import { revalidateTag } from "next/cache"
+import { AddTagButton } from "./add-tag-button"
 
 export function AddTag() {
   async function handleCreateTag(form: FormData) {
@@ -26,7 +27,7 @@ export function AddTag() {
   return (
     <form action={handleCreateTag} method="POST">
       <input type="text" name="slug" placeholder="Slug da tag"/>
-      <button type="submit">Criar tag</button>
+      <AddTagButton />
     </form>
   )
 }
