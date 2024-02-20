@@ -1,0 +1,17 @@
+[33mcommit fdc158ea6d47e75191ba6471eea25ee6059345c3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: eduardooliveira <eos.eduardooliveira@gmail.com>
+Date:   Tue Feb 20 09:46:19 2024 -0300
+
+    Create component tags and API call
+
+[33mcommit 00c33c8c0bd2857e2e6ca47cd292fd43c4af3f4f[m
+Author: eduardooliveira <eos.eduardooliveira@gmail.com>
+Date:   Tue Feb 20 09:34:13 2024 -0300
+
+    config setup
+
+[33mcommit e4d6c3a493d139d5f57120a36c6a661931f8b62f[m
+Author: eduardooliveira <eos.eduardooliveira@gmail.com>
+Date:   Tue Feb 20 06:26:00 2024 -0300
+
+    Initial commit from Create Next App
