@@ -1,28 +1,31 @@
-'use client'
-
-import { FormEvent, useState } from "react"
+import { revalidateTag } from "next/cache"
 
 export function AddTag() {
-  const [ slug, setSlug ] = useState('')
+  async function handleCreateTag(form: FormData) {
+    'use server'
 
-  async function handleCreateTag(event: FormEvent) {
-    event.preventDefault()
+    const slug = form.get('slug')
 
     if (!slug) {
       return
     }
 
+    //delay 3s
+    await new Promise(resolve => setTimeout(resolve, 3000))
+
     await fetch('http://localhost:3333/tags', {
       method: 'POST',
       body: JSON.stringify({
-        slug
+        slug,
       })
     })
+
+    revalidateTag('add-tag')
   }
 
   return (
-    <form onSubmit={handleCreateTag}>
-      <input type="text" name="slug" placeholder="Slug da tag" value={slug} onChange={e => setSlug(e.target.value)}/>
+    <form action={handleCreateTag} method="POST">
+      <input type="text" name="slug" placeholder="Slug da tag"/>
       <button type="submit">Criar tag</button>
     </form>
   )

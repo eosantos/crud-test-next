@@ -1,7 +1,10 @@
 export async function Tags() {
-  const response = await fetch('http://localhost:3333/tags')
+  const response = await fetch('http://localhost:3333/tags', {
+    next: {
+      tags: ['tags']
+    }
+  })
   const data = await response.json()
-  console.log(data)
 
   return (
     <ul>
