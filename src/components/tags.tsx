@@ -1,9 +1,11 @@
-export function Tags() {
+export async function Tags() {
+  const response = await fetch('http://localhost:3333/tags')
+  const data = await response.json()
+  console.log(data)
+
   return (
     <ul>
-      <li>Teste</li>
-      <li>Teste</li>
-      <li>Teste</li>
+      {data.map((item: any) => <li key={item.id}>{item.slug}</li>)}
     </ul>
   )
 }
